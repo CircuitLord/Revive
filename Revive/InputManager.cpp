@@ -53,11 +53,11 @@ InputManager::~InputManager()
 
 void InputManager::LoadActionManifest()
 {
-#ifdef DEBUG
-	vr::EVRInputError err = vr::VRInput()->SetActionManifestPath("F:\\Source\\Revive\\Revive\\Input\\action_manifest.json");
-	if (err == vr::VRInputError_None)
-		return;
-#else
+//#ifdef DEBUG
+	//vr::EVRInputError err = vr::VRInput()->SetActionManifestPath("F:\\Source\\Revive\\Revive\\Input\\action_manifest.json");
+	//if (err == vr::VRInputError_None)
+		//return;
+//#else
 	std::vector<char> pathVec;
 	DWORD pathSize = MAX_PATH;
 	LSTATUS status = RegGetValueA(HKEY_LOCAL_MACHINE, "Software\\Revive", "", RRF_RT_REG_SZ | RRF_SUBKEY_WOW6432KEY, NULL, NULL, &pathSize);
@@ -75,7 +75,7 @@ void InputManager::LoadActionManifest()
 				return;
 		}
 	}
-#endif
+//#endif
 	vr::VROverlay()->ShowMessageOverlay("Failed to load action manifest, input will not function correctly!", "Action manifest error", "Continue");
 }
 
