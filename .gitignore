@@ -253,7 +253,7 @@ paket-files/
 
 # Ignore third-party library
 Externals/LibOVR/
-Externals/LibOVRKernal/
+Externals/LibOVRKernel/
 Externals/Logging/
 
 # Ignore compiled installers
